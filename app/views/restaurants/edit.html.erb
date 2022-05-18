@@ -1,0 +1,11 @@
+<div class="navbar">
+  <h1>Restaurants</h1>
+  <div class="left-list">
+    <p class="btn"><%= link_to "Back to index", restaurants_path %></p>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Edit a restaurant</h2>
+  <%= render "form", restaurant: @restaurant %>
+</div>

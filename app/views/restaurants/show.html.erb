@@ -1,0 +1,22 @@
+<div class="navbar">
+  <h1>Restaurants</h1>
+  <div class="left-list">
+    <p class="btn"><%= link_to "Back to index", restaurants_path %></p>
+    <p class="btn"><%= link_to "Edit a restaurant", edit_restaurant_path %></p>
+    <p class="btn"><%= link_to "Delete", restaurant_path(@restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+  </div>
+</div>
+
+<div class="container">
+  <h2><%= @restaurant.name %></h2>
+
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+
+  <p><% @restaurant.reviews.each do |review| %></p>
+    <p>Rate: <%= review.rating %><br><%= review.content %></p>
+  <p><% end %></p>
+
+  <p class="btn"><%= link_to "Add a review", new_restaurant_review_path(@restaurant) %></p>
+</div>

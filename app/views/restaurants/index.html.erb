@@ -1,0 +1,17 @@
+<div class="navbar">
+  <h1>Restaurants</h1>
+  <p class="btn"><%= link_to "Add a restaurant", new_restaurant_path %></p>
+</div>
+
+<div class="container">
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+        <%= restaurant.category %>
+        <%= restaurant.address %>
+        <%= restaurant.phone_number %>
+      </li>
+    <% end %>
+  </ul>
+</div>
